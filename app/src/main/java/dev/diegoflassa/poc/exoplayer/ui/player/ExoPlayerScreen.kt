@@ -18,6 +18,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -148,7 +149,20 @@ fun ExoPlayerScreenContent(
     }
 
     Scaffold(
-        topBar = { TopAppBar(title = { Text("ExoPlayer MVI Sample") }) }
+        topBar = {
+            TopAppBar(
+                title = { Text("ExoPlayer MVI Sample") },
+                actions = {
+                    IconButton(onClick = {
+                        onIntent?.invoke(ExoPlayerIntent.GoToSettings)
+                    }) {
+                        Icon(
+                            imageVector = Icons.Filled.Settings,
+                            contentDescription = "Settings"
+                        )
+                    }
+                })
+        }
     ) { paddingValues ->
         Column(
             modifier = Modifier

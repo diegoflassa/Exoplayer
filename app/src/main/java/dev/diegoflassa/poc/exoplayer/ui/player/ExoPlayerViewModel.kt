@@ -71,6 +71,7 @@ open class ExoPlayerViewModel @Inject constructor(
     fun reduce(event: ExoPlayerIntent) {
         viewModelScope.launch {
             when (event) {
+                is ExoPlayerIntent.GoToSettings ->_effect.emit(ExoPlayerEffect.GoToSettings)
                 is ExoPlayerIntent.LoadExo -> handleLoadVideo(event.uri)
                 is ExoPlayerIntent.LoadExoFromUrl -> handleLoadVideoFromUrl(event.url)
                 is ExoPlayerIntent.PlayYouTubeExo -> handlePlayYouTubeVideo(event.videoId)

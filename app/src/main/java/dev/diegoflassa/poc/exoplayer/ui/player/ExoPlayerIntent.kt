@@ -3,6 +3,7 @@ package dev.diegoflassa.poc.exoplayer.ui.player
 import android.net.Uri
 
 sealed interface ExoPlayerIntent {
+    object GoToSettings : ExoPlayerIntent
     data class LoadExo(val uri: Uri) : ExoPlayerIntent
     data class LoadExoFromUrl(val url: String) : ExoPlayerIntent
     data class PlayYouTubeExo(val videoId: String) : ExoPlayerIntent
