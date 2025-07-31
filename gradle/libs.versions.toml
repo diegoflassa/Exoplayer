@@ -1,0 +1,164 @@
+[versions]
+
+#Common
+gradle = "8.11.1"
+kotlin = "2.2.0"
+
+#Project build.gradle
+hilt-android-gradle-plugin = "2.57"
+
+#Module build.gradle
+
+#Common
+core-ktx = "1.16.0"
+material = "1.12.0"
+
+#Common Testing
+junit = "4.13.2"
+junit-ktx = "1.2.1"
+
+#Timber
+com-jakewharton-timber = "5.0.1"
+
+#Compose
+compose-bom = "2025.07.00"
+ax-constraintlayout-compose = "1.1.1"
+ax-activity-compose = "1.10.1"
+lifecycle-viewmodel-compose = "2.9.2"
+ax-navigation-compose = "2.9.2"
+kotlinx-serialization-json = "1.9.0"
+
+#Compose Testing
+org-mockito-android = "5.18.0"
+#org-jetbrains-kotlinx-coroutines-test = "1.10.2"
+
+#Compose Navigation 3
+ax-navigation3-runtime = "1.0.0-alpha05"
+ax-navigation3-ui = "1.0.0-alpha05"
+ax-navigation3-viewmodel = "1.0.0-alpha03"
+#ax-navigation3-adaptive = "1.0.0-SNAPSHOT"
+
+#Exoplayer
+media3 = "1.7.1"
+
+#Dagger & Hilt
+hilt-android = "2.57"
+hilt-android-compiler = "2.57"
+hilt-common = "1.2.0"
+hilt-compiler = "1.2.0"
+ax-hilt-navigation-compose = "1.2.0"
+hilt-work = "1.2.0"
+hilt-android-testing = "2.57"
+
+#OkHttp
+okhttp-bom = "5.1.0"
+
+#Retrofit 2
+retrofit2 = "3.0.0"
+com-squareup-retrofit2-kotlinx-serialization-converter = "1.0.0"
+
+#Work
+ax-work-runtime-ktx = "2.10.2"
+
+#YouTube Extractor
+com-github-teamnewpipe-newpipeextractor = "0.24.6"
+
+#Common
+com-google-devtools-ksp = "2.2.0-2.0.2"
+
+[libraries]
+
+#build-logic
+android-gradle-plugin-library = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+kotlin-gradle-plugin-library = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradle-plugin-library = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "com-google-devtools-ksp" }
+
+#Common
+ax-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+com-google-android-material = { module = "com.google.android.material:material", version.ref = "material" }
+
+#Common Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+ax-test-ext-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "junit-ktx" }
+
+#Timber
+com-jakewharton-timber = { module = "com.jakewharton.timber:timber", version.ref = "com-jakewharton-timber" }
+
+#Compose
+ax-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+ax-compose-ui = { module = "androidx.compose.ui:ui" }
+ax-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+ax-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+ax-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+ax-compose-ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding" }
+ax-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+ax-compose-runtime-rxjava3 = { module = "androidx.compose.runtime:runtime-rxjava3" }
+ax-compose-material3 = { module = "androidx.compose.material3:material3" }
+ax-compose-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
+ax-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+ax-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "ax-constraintlayout-compose" }
+ax-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "ax-activity-compose" }
+ax-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose" }
+ax-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "ax-navigation-compose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+
+#Compose Testing
+ax-compose-ui-test = { module = "androidx.compose.ui:ui-test" }
+ax-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+ax-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+org-mockito-android = { module = "org.mockito:mockito-android", version.ref = "org-mockito-android" }
+#org-jetbrains-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx-coroutines-test" }
+
+#Compose Navigation 3
+##Core Navigation 3 libraries
+ax-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "ax-navigation3-runtime" }
+ax-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "ax-navigation3-ui" }
+
+##Optional add-on libraries for ViewModel integration and adaptive layouts
+ax-navigation3-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "ax-navigation3-viewmodel" }
+#ax-navigation3-adaptive = { module = "androidx.compose.material3.adaptive:adaptive-navigation3", version.ref = "ax-navigation3-adaptive" }
+
+#Exoplayer
+androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "media3" }
+androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3" }
+androidx-media3-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "media3" }
+androidx-media3-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref = "media3" }
+
+#Dagger & Hilt
+com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
+com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android-compiler" }
+ax-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "hilt-common" }
+ax-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-compiler" }
+ax-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "ax-hilt-navigation-compose" }
+ax-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hilt-work" }
+
+#Dagger & Hilt Testing
+com-google-dagger-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt-android-testing" }
+
+#OkHttp
+com-squareup-okhttp3-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp-bom" }
+com-squareup-okhttp3 = { module = "com.squareup.okhttp3:okhttp" }
+com-squareup-okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
+
+#Retrofit 2
+com-squareup-retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
+com-squareup-retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "com-squareup-retrofit2-kotlinx-serialization-converter" }
+
+#Work
+ax-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "ax-work-runtime-ktx" }
+
+#YouTube Extractor
+com-github-teamnewpipe-newpipeextractor = { module = "com.github.TeamNewPipe:NewPipeExtractor", version.ref = "com-github-teamnewpipe-newpipeextractor" }
+
+[plugins]
+
+#Common
+com-android-application = { id = "com.android.application", version.ref = "gradle" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "com-google-devtools-ksp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+#Project build.gradle
+hilt-android-gradle-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android-gradle-plugin" }

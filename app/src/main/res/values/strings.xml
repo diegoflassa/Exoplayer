@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Exoplayer</string>
+    <string name="settings_title">Configurações</string>
+    <string name="settings_cd_navigate_back">Voltar</string>
+    <string name="settings_permissions_header">Permissões do Aplicativo</string>
+    <string name="settings_permissions_rationale_title">Permissão Necessária</string>
+    <string name="settings_permissions_status_loading">Carregando status…</string>
+    <string name="settings_permissions_status_granted">Permissão Concedida</string>
+    <string name="settings_permissions_status_denied">Permissão Negada</string>
+    <string name="settings_permissions_button_open_settings">Abrir Configurações</string>
+    <string name="settings_permissions_button_grant">Conceder Permissão</string>
+</resources>
