@@ -1,16 +1,20 @@
 package dev.diegoflassa.poc.exoplayer.ui.player.widgets
 
+import androidx.annotation.OptIn
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.media3.common.Player
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.PlayerView
 
+@OptIn(UnstableApi::class)
 @Composable
 fun ExoPlayerWidget(
-    player: androidx.media3.common.Player?,
+    player: Player?,
     showControls: Boolean,
     onToggleControls: () -> Unit,
     modifier: Modifier = Modifier
@@ -18,11 +22,13 @@ fun ExoPlayerWidget(
     AndroidView(
         factory = { ctx ->
             PlayerView(ctx).apply {
-                // Initial setup. Player and useController will be updated in the update block.
+                setArtworkDisplayMode(PlayerView.ARTWORK_DISPLAY_MODE_FIT)
+
+                controllerHideOnTouch = true
+                controllerShowTimeoutMs = 3000
             }
         },
         update = { view ->
-            // Update the PlayerView when the player instance or showControls changes
             if (view.player != player) {
                 view.player = player
             }
@@ -30,7 +36,7 @@ fun ExoPlayerWidget(
         },
         modifier = modifier
             .fillMaxWidth()
-            .aspectRatio(16 /9f)
+            .aspectRatio(16 / 9f)
             .clickable { onToggleControls() }
     )
 }
