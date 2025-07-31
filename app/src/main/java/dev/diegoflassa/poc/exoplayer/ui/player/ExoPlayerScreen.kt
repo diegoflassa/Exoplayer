@@ -26,7 +26,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
@@ -34,11 +33,11 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.media3.ui.PlayerView
 import dev.diegoflassa.poc.exoplayer.data.model.HardcodedStream
 import dev.diegoflassa.poc.exoplayer.extensions.isRemote
 import dev.diegoflassa.poc.exoplayer.navigation.NavigationViewModel
 import dev.diegoflassa.poc.exoplayer.ui.hiltActivityViewModel
+import dev.diegoflassa.poc.exoplayer.ui.player.widgets.ExoPlayerWidget
 import dev.diegoflassa.poc.exoplayer.ui.theme.ExoPlayerTheme
 import kotlinx.coroutines.flow.collectLatest
 import timber.log.Timber
@@ -181,22 +180,10 @@ fun ExoPlayerScreenContent(
                 }
             } else {
                 if (exoPlayerUIState?.player != null && exoPlayerUIState.videoUri != null) {
-                    AndroidView(
-                        factory = { ctx ->
-                            PlayerView(ctx).apply {
-                                player = exoPlayerUIState.player
-                                useController = exoPlayerUIState.showControls
-                            }
-                        },
-                        update = { view ->
-                            if (view.player != exoPlayerUIState.player) view.player =
-                                exoPlayerUIState.player
-                            view.useController = exoPlayerUIState.showControls
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .aspectRatio(16 / 9f)
-                            .clickable { onIntent?.invoke(ExoPlayerIntent.ToggleControls) }
+                    ExoPlayerWidget(
+                        player = exoPlayerUIState.player,
+                        showControls = exoPlayerUIState.showControls,
+                        onToggleControls = { onIntent?.invoke(ExoPlayerIntent.ToggleControls) }
                     )
                 } else if (exoPlayerUIState?.isLoading == true) {
                     CircularProgressIndicator(modifier = Modifier.padding(vertical = 32.dp))
