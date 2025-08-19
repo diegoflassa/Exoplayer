@@ -2,7 +2,7 @@
 
 #Common
 gradle = "8.11.1"
-kotlin = "2.2.0"
+kotlin = "2.2.10"
 
 #Project build.gradle
 hilt-android-gradle-plugin = "2.57"
@@ -10,7 +10,7 @@ hilt-android-gradle-plugin = "2.57"
 #Module build.gradle
 
 #Common
-core-ktx = "1.16.0"
+core-ktx = "1.17.0"
 material = "1.12.0"
 
 #Common Testing
@@ -21,7 +21,7 @@ junit-ktx = "1.3.0"
 com-jakewharton-timber = "5.0.1"
 
 #Compose
-compose-bom = "2025.07.00"
+compose-bom = "2025.08.00"
 ax-constraintlayout-compose = "1.1.1"
 ax-activity-compose = "1.10.1"
 lifecycle-viewmodel-compose = "2.9.2"
@@ -29,12 +29,12 @@ ax-navigation-compose = "2.9.3"
 kotlinx-serialization-json = "1.9.0"
 
 #Compose Testing
-org-mockito-android = "5.18.0"
+org-mockito-android = "5.19.0"
 #org-jetbrains-kotlinx-coroutines-test = "1.10.2"
 
 #Compose Navigation 3
-ax-navigation3-runtime = "1.0.0-alpha06"
-ax-navigation3-ui = "1.0.0-alpha06"
+ax-navigation3-runtime = "1.0.0-alpha07"
+ax-navigation3-ui = "1.0.0-alpha07"
 ax-navigation3-viewmodel = "1.0.0-alpha04"
 #ax-navigation3-adaptive = "1.0.0-SNAPSHOT"
 
@@ -64,7 +64,7 @@ ax-work-runtime-ktx = "2.10.3"
 com-github-teamnewpipe-newpipeextractor = "0.24.6"
 
 #Common
-com-google-devtools-ksp = "2.2.0-2.0.2"
+com-google-devtools-ksp = "2.2.10-2.0.2"
 
 [libraries]
 
